@@ -160,8 +160,46 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
         {...props}
       >
         <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
-          {/* Left side */}
+          {/* Left side - Logo and site name */}
           <div className="flex items-center gap-2">
+            <button
+              onClick={(e) => e.preventDefault()}
+              className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
+            >
+              <div className="text-2xl">
+                <Link to={"/"}>
+                  {logo}
+                </Link>
+              </div>
+              <span className="hidden font-bold text-xl sm:inline-block">Wilfred Polderman</span>
+            </button>
+          </div>
+
+          {/* Right side - Desktop Navigation + Mobile menu trigger */}
+          <div className="flex items-center gap-4">
+            {/* Desktop Navigation menu */}
+            {!isMobile && (
+              <NavigationMenu className="flex">
+                <NavigationMenuList className="gap-1">
+                  {navigationLinks.map((link, index) => (
+                    <NavigationMenuItem key={index}>
+                      <Link
+                        to={link.href}
+                        className={cn(
+                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
+                          location.pathname === link.href
+                            ? "bg-accent text-accent-foreground"
+                            : "text-foreground/80 hover:text-foreground"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            )}
+
             {/* Mobile menu trigger */}
             {isMobile && (
               <Popover>
@@ -174,63 +212,29 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                     <HamburgerIcon />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent align="start" className="w-48 p-2">
-                <NavigationMenu className="max-w-none">
-                  <NavigationMenuList className="flex-col items-start gap-1">
-                    {navigationLinks.map((link, index) => (
-                      <NavigationMenuItem key={index} className="w-full">
-                        <Link
-                          to={link.href}
-                          className={cn(
-                            "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer no-underline",
-                            location.pathname === link.href
-                              ? "bg-accent text-accent-foreground" 
-                              : "text-foreground/80"
-                          )}
-                        >
-                          {link.label}
-                        </Link>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenu>
+                <PopoverContent align="end" className="w-48 p-2">
+                  <NavigationMenu className="max-w-none">
+                    <NavigationMenuList className="flex-col items-start gap-1">
+                      {navigationLinks.map((link, index) => (
+                        <NavigationMenuItem key={index} className="w-full">
+                          <Link
+                            to={link.href}
+                            className={cn(
+                              "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer no-underline",
+                              location.pathname === link.href
+                                ? "bg-accent text-accent-foreground"
+                                : "text-foreground/80"
+                            )}
+                          >
+                            {link.label}
+                          </Link>
+                        </NavigationMenuItem>
+                      ))}
+                    </NavigationMenuList>
+                  </NavigationMenu>
                 </PopoverContent>
               </Popover>
             )}
-            {/* Main nav */}
-            <div className="flex items-center gap-6">
-              <button 
-                onClick={(e) => e.preventDefault()}
-                className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
-              >
-                <div className="text-2xl">
-                  {logo}
-                </div>
-                <span className="hidden font-bold text-xl sm:inline-block">Wilfred Polderman</span>
-              </button>
-              {/* Navigation menu */}
-              {!isMobile && (
-                <NavigationMenu className="flex">
-                <NavigationMenuList className="gap-1">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index}>
-                      <Link
-                        to={link.href}
-                        className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
-                          location.pathname === link.href
-                            ? "bg-accent text-accent-foreground" 
-                            : "text-foreground/80 hover:text-foreground"
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-                </NavigationMenu>
-              )}
-            </div>
           </div>
         </div>
       </header>
