@@ -1,7 +1,5 @@
 import { type FunctionComponent } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Code } from "lucide-react";
 import { skillsHomePage } from "@/data/SkillsHomePage";
 
