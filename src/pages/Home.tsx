@@ -2,7 +2,7 @@ import { type FunctionComponent } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Zap } from "lucide-react";
+import { Code } from "lucide-react";
 import { skillsHomePage } from "@/data/SkillsHomePage";
 
 export const Home: FunctionComponent = () => {
@@ -12,8 +12,9 @@ export const Home: FunctionComponent = () => {
       <section className="bg-gradient-to-r from-emerald-400 to-cyan-400 flex flex-col items-center justify-center py-25 px-4">
 
         <div className="flex gap-2 items-center bg-white/20 rounded-full backdrop-blur-sm px-5 py-3 mb-6">
-          <Zap />
+          <Code />
           <h1>Welcome to my portfolio!</h1>
+          <Code />
         </div>
 
         <div>
