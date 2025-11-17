@@ -1,6 +1,11 @@
 import { type FunctionComponent } from "react";
 import { Button } from "@/components/ui/button";
 
+/*TODO:
+  - Contactformulier toevoegen (netlify tussenkomst?)
+  - Github & Linkedin link toevoegen
+*/
+
 export const Contact: FunctionComponent = () => {
   return (
     <div className="p-8 justify-center items-center flex flex-col">

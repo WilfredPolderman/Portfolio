@@ -1,6 +1,15 @@
 import { type FunctionComponent } from "react";
 import { Button } from "@/components/ui/button";
 
+/*TODO:
+  - Project cards opstellen met meer info over elk project
+  - Link naar aparte gedetailleerde projectpagina's
+  - categorieën of tags voor projecten
+  - mogelijke filters voor projecten
+  - Gebruikte tools en technologieën weergeven
+
+*/
+
 export const Projects: FunctionComponent = () => {
   return (
     <div className="p-8 justify-center items-center flex flex-col">
