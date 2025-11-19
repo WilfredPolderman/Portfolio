@@ -1,8 +1,6 @@
 export interface Project {
-    id: number;
-    name: string;
-    description: string;
-    techstack: string[];
+    title: string;
     imageUrl: string;
-    projectUrl: string;
+    description: string;
+    link: string;
 }

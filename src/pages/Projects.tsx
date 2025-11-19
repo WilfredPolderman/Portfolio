@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
   - categorieën of tags voor projecten
   - mogelijke filters voor projecten
   - Gebruikte tools en technologieën weergeven
-
 */
 
 export const Projects: FunctionComponent = () => {
