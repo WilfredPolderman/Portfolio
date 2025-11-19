@@ -1,5 +1,5 @@
 import type { Project } from "../models/Project";
-import woonderwijs from "../assets/images/woonderwijs.png";
+import woonderwijs from "../assets/images/Woonderwijs.png";
 
 export const HighlightedProjects: Project[] = [
     {
