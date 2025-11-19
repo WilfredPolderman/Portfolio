@@ -4,8 +4,6 @@ import { SkillsSection } from "@/components/HomeSections/SkillsSection";
 import { ProjectHighlightSection } from "@/components/HomeSections/ProjectHighlightSection";
 import { ContactSection } from "@/components/HomeSections/ContactSection";
 
-//TODO: Sections als aparte componenten maken
-
 export const Home: FunctionComponent = () => {
   return (
     <>
