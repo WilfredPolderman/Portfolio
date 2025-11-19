@@ -1,6 +1,8 @@
 import { Code } from "lucide-react"
 
-
+/*TODO:
+- Bewegende tekst
+*/
 export const HeroSection = () => {
     return (
         <section className="bg-gradient-to-r from-emerald-400 to-cyan-400 flex flex-col items-center justify-center py-28 px-4 text-center">
