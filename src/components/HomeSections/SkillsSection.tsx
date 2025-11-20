@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Button } from "../ui/button"
-import { SkillCard } from "../SkillCard"
-import { skills } from "@/data/SkillsHomePage"
+import { SkillCard } from "../Cards/SkillCard"
+import { skills } from "@/data/Skills/SkillsHomePage"
 
 export const SkillsSection = () => {
     return (

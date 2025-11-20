@@ -1,6 +1,6 @@
 import type { Skill } from "@/models/Skill";
 import { FaReact } from "react-icons/fa";
-import { SiTypescript, SiDotnet, SiHtml5 } from "react-icons/si";
+import { SiTypescript, SiDotnet, SiHtml5, SiCss3, SiJavascript, SiGit } from "react-icons/si";
 
 export const skillsHomePage: Skill[] = [
     {
@@ -18,5 +18,17 @@ export const skillsHomePage: Skill[] = [
     {
         name: "HTML5",
         icon: SiHtml5,
+    },
+    {
+        name: "CSS3",
+        icon: SiCss3,
+    },
+    {
+        name: "JavaScript",
+        icon: SiJavascript,
+    },
+    {
+        name: "Git",
+        icon: SiGit,
     }
 ]

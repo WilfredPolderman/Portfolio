@@ -1,5 +1,5 @@
-import { HighlightedProjects } from "@/data/HighlightedProjects"
-import { ProjectCard } from "../ProjectCard"
+import { HighlightedProjects } from "@/data/Projects/HighlightedProjects"
+import { ProjectCard } from "../Cards/ProjectCard"
 
 export const ProjectHighlightSection = () => {
     return (
@@ -15,6 +15,7 @@ export const ProjectHighlightSection = () => {
                             title={project.title}
                             description={project.description}
                             link={project.link}
+                            tags={project.tags || []}
                         />
                     ))}
                 </div>
