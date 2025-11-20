@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "../ui/button"
-import { SkillCard } from "../Cards/SkillCard"
+import { SkillCard } from "../skill/SkillCard"
 import { skills } from "@/data/Skills/SkillsHomePage"
 
 export const SkillsSection = () => {

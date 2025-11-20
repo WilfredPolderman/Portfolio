@@ -171,7 +171,9 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                   {logo}
                 </Link>
               </div>
-              <span className="hidden font-bold text-xl sm:inline-block">Wilfred Polderman</span>
+              <Link to={"/"}>
+                <span className="hidden font-bold text-xl sm:inline-block">Wilfred Polderman</span>
+              </Link>
             </button>
           </div>
 

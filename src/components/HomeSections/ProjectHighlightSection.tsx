@@ -1,5 +1,7 @@
 import { HighlightedProjects } from "@/data/Projects/HighlightedProjects"
-import { ProjectCard } from "../Cards/ProjectCard"
+import { ProjectCard } from "../project/ProjectCard"
+import { Button } from "../ui/button"
+import { Link } from "react-router-dom"
 
 export const ProjectHighlightSection = () => {
     return (
@@ -18,6 +20,12 @@ export const ProjectHighlightSection = () => {
                             tags={project.tags || []}
                         />
                     ))}
+                </div>
+
+                <div>
+                    <Link to="/projects">
+                        <Button className="mt-10 mx-auto block">See All Projects</Button>
+                    </Link>
                 </div>
 
             </div>

@@ -6,4 +6,7 @@ export interface Project {
     fullDescription?: string;
     link: string;
     tags?: string[];
+    downloadLink?: string;
+    showDownloadButton?: boolean;
+    slug: string;
 }

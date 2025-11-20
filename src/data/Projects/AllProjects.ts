@@ -1,7 +1,7 @@
 import type { Project } from "@/models/Project";
 import { HighlightedProjects } from "./HighlightedProjects";
 
-export const allProjects: Project[] = [
+export const AllProjects: Project[] = [
     ...HighlightedProjects,
     {
         id: 4,
@@ -10,6 +10,7 @@ export const allProjects: Project[] = [
         description: "A personal blog built with Gatsby and Markdown.",
         fullDescription: "This personal blog was created using Gatsby, a React-based static site generator. It features Markdown support for easy content creation and a clean, responsive design.",
         link: "/projects/personal-blog",
-        tags: ["Gatsby", "React", "Markdown"]
+        tags: ["Gatsby", "React", "Markdown"],
+        slug: "personal-blog"
     }
 ]
