@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 export const ProjectHighlightSection = () => {
     return (
-        <section className="bg-white py-20 px-4">
+        <section className="bg-gray-50 py-20 px-4">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-10 text-center">Highlighted Projects</h2>
 

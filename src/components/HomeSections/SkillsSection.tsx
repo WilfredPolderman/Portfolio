@@ -5,7 +5,7 @@ import { skills } from "@/data/Skills/SkillsHomePage"
 
 export const SkillsSection = () => {
     return (
-        <section className="bg-gray-50 py-20 px-4">
+        <section className="bg-gray-100 py-20 px-4">
 
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-10 text-center">Main Skills</h2>

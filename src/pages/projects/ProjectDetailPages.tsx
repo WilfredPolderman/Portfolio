@@ -2,6 +2,11 @@ import { AllProjects } from "@/data/Projects/AllProjects";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 
+/* TODO:
+    -Download button voorzien waar nodig
+    
+*/
+
 export function ProjectDetailPages() {
     const { slug } = useParams();
     const navigate = useNavigate();
