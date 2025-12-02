@@ -15,7 +15,7 @@ export const SkillBubble = ({ name, Icon }: SkillBubbleProps) => {
                     bg-card text-card-foreground
                     shadow-md hover:shadow-xl hover:scale-105
                     transition-all duration-300
-                    dark:bg-card/40 dark:text-card-foreground
+                    border border-border
                 "
             >
                 <Icon className="text-4xl" />
