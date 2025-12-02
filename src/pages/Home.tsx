@@ -4,6 +4,11 @@ import { SkillsSection } from "@/components/HomeSections/SkillsSection";
 import { ProjectHighlightSection } from "@/components/HomeSections/ProjectHighlightSection";
 import { ContactSection } from "@/components/HomeSections/ContactSection";
 
+/***********/
+//TODO:
+//-Dark mode toevoegen
+/***********/
+
 export const Home: FunctionComponent = () => {
   return (
     <>

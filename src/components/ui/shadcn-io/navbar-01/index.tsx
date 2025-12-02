@@ -16,6 +16,8 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 
+import { Moon, Sun } from "lucide-react";
+
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
   return (
@@ -83,12 +85,6 @@ export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
   logo?: React.ReactNode;
   logoHref?: string;
   navigationLinks?: Navbar01NavLink[];
-  signInText?: string;
-  signInHref?: string;
-  ctaText?: string;
-  ctaHref?: string;
-  onSignInClick?: () => void;
-  onCtaClick?: () => void;
 }
 
 // Default navigation links
@@ -106,16 +102,41 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       logo = <Logo />,
       logoHref = '#',
       navigationLinks = defaultNavigationLinks,
-      signInText = 'Sign In',
-      signInHref = '#signin',
-      ctaText = 'Get Started',
-      ctaHref = '#get-started',
-      onSignInClick,
-      onCtaClick,
       ...props
     },
     ref
   ) => {
+
+    /* ---------------------------------------------------
+       DARK MODE STATE + LOGIC
+    --------------------------------------------------- */
+    const [theme, setTheme] = useState(() => {
+      if (typeof window !== "undefined") {
+        return localStorage.getItem("theme") || "light";
+      }
+      return "light";
+    });
+
+    useEffect(() => {
+      const root = document.documentElement;
+
+      if (theme === "dark") {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+
+      localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+      setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    };
+
+
+    /* ---------------------------------------------------
+       EXISTING NAVBAR LOGIC
+    --------------------------------------------------- */
     const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef<HTMLElement>(null);
     const location = useLocation();
@@ -124,7 +145,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       const checkWidth = () => {
         if (containerRef.current) {
           const width = containerRef.current.offsetWidth;
-          setIsMobile(width < 768); // 768px is md breakpoint
+          setIsMobile(width < 768); // md breakpoint
         }
       };
 
@@ -135,21 +156,19 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
         resizeObserver.observe(containerRef.current);
       }
 
-      return () => {
-        resizeObserver.disconnect();
-      };
+      return () => resizeObserver.disconnect();
     }, []);
 
-    // Combine refs
     const combinedRef = React.useCallback((node: HTMLElement | null) => {
       containerRef.current = node;
-      if (typeof ref === 'function') {
-        ref(node);
-      } else if (ref) {
-        ref.current = node;
-      }
+      if (typeof ref === 'function') ref(node);
+      else if (ref) ref.current = node;
     }, [ref]);
 
+
+    /* ---------------------------------------------------
+       RENDER
+    --------------------------------------------------- */
     return (
       <header
         ref={combinedRef}
@@ -160,26 +179,42 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
         {...props}
       >
         <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
-          {/* Left side - Logo and site name */}
+
+          {/* LEFT: Logo */}
           <div className="flex items-center gap-2">
             <button
               onClick={(e) => e.preventDefault()}
               className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
             >
               <div className="text-2xl">
-                <Link to={"/"}>
-                  {logo}
-                </Link>
+                <Link to={"/"}>{logo}</Link>
               </div>
               <Link to={"/"}>
-                <span className="hidden font-bold text-xl sm:inline-block">Wilfred Polderman</span>
+                <span className="hidden font-bold text-xl sm:inline-block">
+                  Wilfred Polderman
+                </span>
               </Link>
             </button>
           </div>
 
-          {/* Right side - Desktop Navigation + Mobile menu trigger */}
+          {/* RIGHT SIDE */}
           <div className="flex items-center gap-4">
-            {/* Desktop Navigation menu */}
+
+            {/* 🌙 DARK MODE BUTTON */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="h-9 w-9"
+            >
+              {theme === "light" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+
+            {/* DESKTOP NAV */}
             {!isMobile && (
               <NavigationMenu className="flex">
                 <NavigationMenuList className="gap-1">
@@ -188,7 +223,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                       <Link
                         to={link.href}
                         className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
+                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none",
                           location.pathname === link.href
                             ? "bg-accent text-accent-foreground"
                             : "text-foreground/80 hover:text-foreground"
@@ -202,7 +237,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
               </NavigationMenu>
             )}
 
-            {/* Mobile menu trigger */}
+            {/* MOBILE NAV */}
             {isMobile && (
               <Popover>
                 <PopoverTrigger asChild>
@@ -222,7 +257,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                           <Link
                             to={link.href}
                             className={cn(
-                              "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer no-underline",
+                              "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground",
                               location.pathname === link.href
                                 ? "bg-accent text-accent-foreground"
                                 : "text-foreground/80"
@@ -237,6 +272,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                 </PopoverContent>
               </Popover>
             )}
+
           </div>
         </div>
       </header>

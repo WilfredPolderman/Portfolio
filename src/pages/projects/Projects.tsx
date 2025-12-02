@@ -1,5 +1,5 @@
 import { type FunctionComponent } from "react";
-import { AllProjectsComponent } from "@/components/AllProjects";
+import { AllProjectsComponent } from "@/components/project/AllProjects";
 
 /*TODO:
   - Project cards opstellen met meer info over elk project

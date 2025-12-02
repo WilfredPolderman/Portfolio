@@ -1,4 +1,4 @@
-import { ProjectCard } from "./project/ProjectCard"
+import { ProjectCard } from "./ProjectCard"
 import { AllProjects } from "@/data/Projects/AllProjects"
 
 export const AllProjectsComponent = () => {
