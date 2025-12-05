@@ -15,6 +15,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
+import { useDarkMode } from '@/context/DarkModeContext';
 
 import { Moon, Sun } from "lucide-react";
 
@@ -106,33 +107,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     },
     ref
   ) => {
-
-    /* ---------------------------------------------------
-       DARK MODE STATE + LOGIC
-    --------------------------------------------------- */
-    const [theme, setTheme] = useState(() => {
-      if (typeof window !== "undefined") {
-        return localStorage.getItem("theme") || "light";
-      }
-      return "light";
-    });
-
-    useEffect(() => {
-      const root = document.documentElement;
-
-      if (theme === "dark") {
-        root.classList.add("dark");
-      } else {
-        root.classList.remove("dark");
-      }
-
-      localStorage.setItem("theme", theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-      setTheme((prev) => (prev === "light" ? "dark" : "light"));
-    };
-
+    const { theme, toggleTheme } = useDarkMode();
 
     /* ---------------------------------------------------
        EXISTING NAVBAR LOGIC

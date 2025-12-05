@@ -11,7 +11,7 @@ export const AllProjectsComponent = () => {
                         title={project.title}
                         imageUrl={project.imageUrl}
                         description={project.description}
-                        link={project.link}
+                        slug={project.slug}
                         tags={project.tags || []}
                     />
                 ))}

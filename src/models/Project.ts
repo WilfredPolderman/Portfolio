@@ -9,4 +9,5 @@ export interface Project {
     downloadLink?: string;
     showDownloadButton?: boolean;
     slug: string;
+    achieved?: string[];
 }

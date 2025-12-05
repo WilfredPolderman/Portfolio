@@ -4,12 +4,15 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Routing } from './navigation/Routing'
 import { Navbar } from './navigation/Navbar'
+import { DarkModeProvider } from './context/DarkModeContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Navbar />
-      <Routing />
-    </BrowserRouter>
+    <DarkModeProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routing />
+      </BrowserRouter>
+    </DarkModeProvider>
   </StrictMode>,
 )

@@ -6,8 +6,12 @@ export const HighlightedProjects: Project[] = [
         title: "Woonderwijs website",
         imageUrl: "/images/Woonderwijs.png",
         description: "Developed a website from scratch based on the client's needs.",
-        link: "/projects/woonderwijs",
-        tags: ["Wordpress", "Elementor"],
+        fullDescription: `For the summer of 2025 I wanted to do volunteer work, and I came across an organization 
+                            called "Woonderwijs" that was looking for someone to build a new website for them in WordPress. 
+                            I saw this as a great opportunity to improve my WordPress skills and most importantly, to learn 
+                            how to translate a client's needs into a real, functional product.`,
+        link: "https://www.woonzekerheid.be/",
+        tags: ["WordPress", "Elementor", "Web Design"],
         slug: "woonderwijs"
     },
     {

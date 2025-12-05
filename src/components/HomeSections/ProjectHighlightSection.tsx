@@ -18,7 +18,7 @@ export const ProjectHighlightSection = () => {
                             imageUrl={project.imageUrl}
                             title={project.title}
                             description={project.description}
-                            link={project.link}
+                            slug={project.slug}
                             tags={project.tags || []}
                         />
                     ))}

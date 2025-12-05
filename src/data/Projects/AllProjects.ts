@@ -5,12 +5,12 @@ export const AllProjects: Project[] = [
     ...HighlightedProjects,
     {
         id: 4,
-        title: "Personal Blog",
+        title: "Filler Project",
         imageUrl: "/images/projects/personal-blog.png",
-        description: "A personal blog built with Gatsby and Markdown.",
-        fullDescription: "This personal blog was created using Gatsby, a React-based static site generator. It features Markdown support for easy content creation and a clean, responsive design.",
+        description: "This is some filler project data.",
+        fullDescription: "This is filler data for testing purposes.",
         link: "/projects/personal-blog",
-        tags: ["Gatsby", "React", "Markdown"],
-        slug: "personal-blog"
+        tags: ["React"],
+        slug: "filler-project"
     }
 ]

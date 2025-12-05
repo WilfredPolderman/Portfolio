@@ -6,7 +6,7 @@ interface ProjectCardProps {
     title: string;
     imageUrl: string;
     description: string;
-    link: string;
+    slug: string;
     tags: string[];
 }
 
@@ -14,7 +14,7 @@ interface ProjectCardProps {
 - Not sure yet: Voorzie carousel van techstack iconen onder de titel
 - Not sure yet: Voorzie een carousel voor meerdere afbeeldingen per project
 */
-export function ProjectCard({ title, imageUrl, description, link, tags }: ProjectCardProps) {
+export function ProjectCard({ title, imageUrl, description, slug, tags }: ProjectCardProps) {
     return (
         <Card className="shadow-md hover:shadow-lg transition-shadow dark:shadow-none dark:hover:shadow-xl">
             <CardHeader className="text-center">
@@ -44,7 +44,7 @@ export function ProjectCard({ title, imageUrl, description, link, tags }: Projec
                 <p className="p-4 text-muted-foreground">{description}</p>
 
                 <div className="flex justify-center mt-4">
-                    <Link to={link}>
+                    <Link to={`/projects/${slug}`}>
                         <Button>More info</Button>
                     </Link>
                 </div>
