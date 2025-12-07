@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "../ui/button"
-import { skills } from "@/data/Skills/SkillsHomePage"
+import { skills } from "@/data/SkillsHomePage"
 import { SkillBubble } from "../skill/SkillBubble"
 
 export const SkillsSection = () => {
@@ -22,7 +22,7 @@ export const SkillsSection = () => {
 
                 <div>
                     <Link to="/about">
-                        <Button className="mt-10 mx-auto block">See All Skills</Button>
+                        <Button className="mt-10 mx-auto block">About Me</Button>
                     </Link>
                 </div>
             </div>

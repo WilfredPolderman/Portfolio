@@ -8,10 +8,12 @@ import { Button } from "@/components/ui/button";
 
 export const Contact: FunctionComponent = () => {
   return (
-    <div className="p-8 justify-center items-center flex flex-col">
-      <h1 className="text-2xl font-bold">Get in Touch</h1>
-      <p className="mt-4 text-gray-600">I'd love to hear from you!</p>
-      <Button className="mt-5">Contact Me</Button>
+    <div className="py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Contact</h1>
+        <div className="border-b border-gray-200 dark:border-gray-700 mb-12"></div>
+
+      </div>
     </div>
   );
 };
