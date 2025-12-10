@@ -5,7 +5,7 @@ import { Button } from "../ui/button"
 
 export const ProjectHighlightSection = () => {
     return (
-        <section className="bg-background py-20 px-4">
+        <section className="bg-background py-15 px-4">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-10 text-center text-foreground">
                     Highlighted Projects
@@ -24,10 +24,12 @@ export const ProjectHighlightSection = () => {
                     ))}
                 </div>
 
-                <div>
-                    <Link to="/projects">
-                        <Button className="mt-10 mx-auto block">See All Projects</Button>
-                    </Link>
+                <div className="flex justify-center mt-10">
+                    <Button asChild>
+                        <Link to="/projects">
+                            See All Projects
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </section>

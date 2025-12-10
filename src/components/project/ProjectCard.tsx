@@ -44,9 +44,11 @@ export function ProjectCard({ title, imageUrl, description, slug, tags }: Projec
                 <p className="p-4 text-muted-foreground">{description}</p>
 
                 <div className="flex justify-center mt-4">
-                    <Link to={`/projects/${slug}`}>
-                        <Button>More info</Button>
-                    </Link>
+                    <Button asChild>
+                        <Link to={`/projects/${slug}`}>
+                            More info
+                        </Link>
+                    </Button>
                 </div>
             </CardContent>
         </Card>

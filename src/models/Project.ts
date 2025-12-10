@@ -8,6 +8,7 @@ export interface Project {
     tags?: string[];
     downloadLink?: string;
     showDownloadButton?: boolean;
+    githubLink?: string;
     slug: string;
     achieved?: string[];
 }

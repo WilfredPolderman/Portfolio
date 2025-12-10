@@ -157,25 +157,20 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
 
           {/* LEFT: Logo */}
           <div className="flex items-center gap-2">
-            <button
-              onClick={(e) => e.preventDefault()}
-              className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
-            >
+            <Link to={"/"} className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
               <div className="text-2xl">
-                <Link to={"/"}>{logo}</Link>
+                {logo}
               </div>
-              <Link to={"/"}>
-                <span className="hidden font-bold text-xl sm:inline-block">
-                  Wilfred Polderman
-                </span>
-              </Link>
-            </button>
+              <span className="hidden font-bold text-xl sm:inline-block">
+                Wilfred Polderman
+              </span>
+            </Link>
           </div>
 
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-4">
 
-            {/* 🌙 DARK MODE BUTTON */}
+            {/* DARK MODE BUTTON */}
             <Button
               variant="ghost"
               size="icon"

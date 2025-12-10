@@ -1,5 +1,7 @@
 import { AllProjects } from "@/data/Projects/AllProjects";
 import { ArrowLeft, ExternalLink, Download } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
 import { useNavigate, useParams } from "react-router-dom";
 
 export function ProjectDetailPages() {
@@ -65,24 +67,38 @@ export function ProjectDetailPages() {
 
                 <div className="flex flex-wrap gap-4">
                     {project.link && project.link !== `/projects/${slug}` && (
-                        <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors"
-                        >
-                            <ExternalLink size={18} /> Visit Project
-                        </a>
+                        <Button asChild>
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <ExternalLink size={18} /> Visit Project
+                            </a>
+                        </Button>
                     )}
 
                     {project.showDownloadButton && project.downloadLink && (
-                        <a
-                            href={project.downloadLink}
-                            download
-                            className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
-                        >
-                            <Download size={18} /> Download
-                        </a>
+                        <Button asChild variant="secondary">
+                            <a
+                                href={project.downloadLink}
+                                download
+                            >
+                                <Download size={18} /> Download
+                            </a>
+                        </Button>
+                    )}
+
+                    {project.githubLink && (
+                        <Button asChild variant="outline">
+                            <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub size={18} /> GitHub
+                            </a>
+                        </Button>
                     )}
                 </div>
             </main>

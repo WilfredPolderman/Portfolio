@@ -31,14 +31,3 @@ export const certifications = [
     period: "29/12/2024",
   }
 ];
-
-export const skills = [
-  {
-    category: "Frontend",
-    items: ["React", "TypeScript", "JavaScript", "HTML", "CSS"]
-  },
-  {
-    category: "Backend",
-    items: ["ASP.NET Core", ".NET Core"]
-  }
-]

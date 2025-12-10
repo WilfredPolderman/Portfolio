@@ -32,6 +32,7 @@ export const HighlightedProjects: Project[] = [
         downloadLink: "/downloads/Run-Dino-Run.zip",
         tags: ["Unity", "C#"],
         slug: "unity-dino-runner",
-        showDownloadButton: true
+        showDownloadButton: true,
+        githubLink: "https://github.com/it-graduaten-aj2526/aj2526-it-challenges-3-unity-WilfredPolderman/tree/main/EigenSpel"
     }
 ];
