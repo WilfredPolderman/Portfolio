@@ -1,4 +1,4 @@
-import { Code, Download, Github, Linkedin } from "lucide-react"
+import { Code, Download} from "lucide-react"
 import { Button } from "../ui/button"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
