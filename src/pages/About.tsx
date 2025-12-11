@@ -1,13 +1,13 @@
 import { type FunctionComponent } from "react";
 import { certifications, education, workExperience } from "@/data/AboutContent";
-import { Briefcase, GraduationCap, Scroll } from "lucide-react";
+import { Briefcase, GraduationCap, Scroll, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 /*TODO:
   - Meer gedetailleerde info over mezelf toevoegen
   - Mijn achtergrond, ervaring en interesses beschrijven
   - Link naar socials toevoegen
   - alle skills weergeven
-  - Certificaten/opleidingen toevoegen
 
   Volgorde:
     - Over mij
@@ -63,10 +63,20 @@ export const About: FunctionComponent = () => {
             Certifications
           </h2>
           {certifications.map((cert, index) => (
-            <article key={index} className="mb-6 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-600 dark:border-purple-400">
-              <h3 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h3>
-              <p className="text-sm">{cert.issuer}</p>
-              <p className="text-sm">{cert.period}</p>
+            <article key={index} className="mb-6 bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-600 dark:border-purple-400 flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h3>
+                <p className="text-sm">{cert.issuer}</p>
+                <p className="text-sm">{cert.period}</p>
+              </div>
+              {cert.downloadLink && (
+                <Button asChild size="sm">
+                  <a href={cert.downloadLink} download>
+                    <Download />
+                    Download
+                  </a>
+                </Button>
+              )}
             </article>
           ))}
         </section>

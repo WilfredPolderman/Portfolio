@@ -1,4 +1,6 @@
-export const education = [
+import type { Education, WorkExperience, Certification } from "@/models/About";
+
+export const education: Education[] = [
   {
     title: "Graduaat Programmeren - Thomas-More Lier",
     period: "2023 - 2025",
@@ -9,7 +11,7 @@ export const education = [
   },
 ];
 
-export const workExperience = [
+export const workExperience: WorkExperience[] = [
   {
     title: "Web Developer (Volunteer)",
     company: "Woonderwijs",
@@ -24,10 +26,11 @@ export const workExperience = [
   }
 ];
 
-export const certifications = [
+export const certifications: Certification[] = [
   {
     title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
     period: "29/12/2024",
+    downloadLink: "/downloads/Certifications/IntroToCybersec.pdf"
   }
 ];

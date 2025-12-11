@@ -11,32 +11,34 @@ export const HeroSection = () => {
             dark:from-emerald-900 dark:to-cyan-900
         ">
 
-            <div className="flex gap-2 items-center bg-background/40 rounded-full backdrop-blur-sm px-5 py-3 mb-6">
-                <Code className="text-foreground" />
-                <h1 className="text-foreground">Welcome to my portfolio!</h1>
-                <Code className="text-foreground" />
+            <div className="mb-5 animate-bounce">
+                <Code size={45} />
             </div>
 
             <h1 className="text-4xl font-bold mb-4 text-foreground">
-                I'm Wilfred, a fullstack developer.
+                Wilfred Polderman
             </h1>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-                <Button asChild variant="outline">
-                    <a href="/resume.pdf" download>
+            <h2 className="text-2xl text-foreground">
+                Full-Stack Developer
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-4 mt-5">
+                <Button asChild variant="outline" size="lg">
+                    <a href="/downloads/WilfredPoldermanResume.pdf" download>
                         <Download />
                         Download Resume
                     </a>
                 </Button>
 
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" size="lg">
                     <a href="https://be.linkedin.com/in/wilfred-polderman-216935234" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin />
                         Linkedin
                     </a>
                 </Button>
 
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" size="lg">
                     <a href="https://github.com/WilfredPolderman" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
                         Github
