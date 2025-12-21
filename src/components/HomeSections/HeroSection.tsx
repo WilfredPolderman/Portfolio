@@ -1,6 +1,8 @@
-import { Code, Download} from "lucide-react"
+import { Terminal, Download} from "lucide-react"
 import { Button } from "../ui/button"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+
+// CV in het Engels maken?
 
 export const HeroSection = () => {
     return (
@@ -12,7 +14,7 @@ export const HeroSection = () => {
         ">
 
             <div className="mb-5 animate-bounce">
-                <Code size={45} />
+                <Terminal size={45} />
             </div>
 
             <h1 className="text-4xl font-bold mb-4 text-foreground">

@@ -3,11 +3,15 @@ import type { Education, WorkExperience, Certification } from "@/models/About";
 export const education: Education[] = [
   {
     title: "Graduaat Programmeren - Thomas-More Lier",
-    period: "2023 - 2025",
+    period: "2024 - 2026",
   },
   {
     title: "HAVO - Kellebeek College",
-    period: "2022 - 2023",
+    period: "2017 - 2020",
+  },
+  {
+    title: "MAVO",
+    period: "2011 - 2015",
   },
 ];
 

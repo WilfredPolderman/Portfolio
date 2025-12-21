@@ -11,7 +11,9 @@ createRoot(document.getElementById('root')!).render(
     <DarkModeProvider>
       <BrowserRouter>
         <Navbar />
-        <Routing />
+        <div className="pt-16">
+          <Routing />
+        </div>
       </BrowserRouter>
     </DarkModeProvider>
   </StrictMode>,
