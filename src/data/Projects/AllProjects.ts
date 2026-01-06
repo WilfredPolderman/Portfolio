@@ -6,7 +6,7 @@ export const AllProjects: Project[] = [
     {
         id: 4,
         title: "Filler Project",
-        imageUrl: "/images/projects/personal-blog.png",
+        displayImage: "/images/projects/personal-blog.png",
         description: "This is some filler project data.",
         fullDescription: "This is filler data for testing purposes.",
         link: "/projects/personal-blog",

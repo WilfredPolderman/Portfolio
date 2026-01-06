@@ -39,7 +39,7 @@ export function ProjectDetailPages() {
 
             <main className="max-w-4xl mx-auto px-4 py-12 sm:px-6">
                 <img
-                    src={project.imageUrl}
+                    src={project.displayImage}
                     alt={project.title}
                     className="w-full h-96 object-cover rounded-xl shadow-lg dark:shadow-2xl mb-8"
                 />
@@ -67,7 +67,7 @@ export function ProjectDetailPages() {
 
                 <div className="flex flex-wrap gap-4">
                     {project.link && project.link !== `/projects/${slug}` && (
-                        <Button asChild>
+                        <Button asChild variant="outline">
                             <a
                                 href={project.link}
                                 target="_blank"
@@ -79,7 +79,7 @@ export function ProjectDetailPages() {
                     )}
 
                     {project.showDownloadButton && project.downloadLink && (
-                        <Button asChild variant="secondary">
+                        <Button asChild variant="outline">
                             <a
                                 href={project.downloadLink}
                                 download

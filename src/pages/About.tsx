@@ -93,7 +93,7 @@ export const About: FunctionComponent = () => {
                 <p className="text-sm">{cert.period}</p>
               </div>
               {cert.downloadLink && (
-                <Button asChild size="sm">
+                <Button asChild variant="outline" size="sm">
                   <a href={cert.downloadLink} download>
                     <Download />
                     Download

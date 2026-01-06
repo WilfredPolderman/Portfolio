@@ -15,7 +15,7 @@ export const ProjectHighlightSection = () => {
                     {HighlightedProjects.map((project) => (
                         <ProjectCard
                             key={project.title}
-                            imageUrl={project.imageUrl}
+                            displayImage={project.displayImage}
                             title={project.title}
                             description={project.description}
                             slug={project.slug}
@@ -25,7 +25,7 @@ export const ProjectHighlightSection = () => {
                 </div>
 
                 <div className="flex justify-center mt-10">
-                    <Button asChild>
+                    <Button asChild variant="outline">
                         <Link to="/projects">
                             See All Projects
                         </Link>

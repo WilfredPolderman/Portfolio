@@ -9,7 +9,7 @@ export const AllProjectsComponent = () => {
                     <ProjectCard
                         key={project.id}
                         title={project.title}
-                        imageUrl={project.imageUrl}
+                        displayImage={project.displayImage}
                         description={project.description}
                         slug={project.slug}
                         tags={project.tags || []}

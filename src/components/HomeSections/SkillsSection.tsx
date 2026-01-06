@@ -21,7 +21,7 @@ export const SkillsSection = () => {
                 </div>
 
                 <div className="flex justify-center mt-10">
-                    <Button asChild>
+                    <Button asChild variant="outline">
                         <Link to="/about">
                             Full Profile
                         </Link>

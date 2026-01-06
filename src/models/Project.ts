@@ -1,7 +1,8 @@
 export interface Project {
     id: number;
     title: string;
-    imageUrl: string;
+    displayImage: string;
+    images?: string[];
     description: string;
     fullDescription?: string;
     link: string;

@@ -4,22 +4,20 @@ import { Button } from "../ui/button";
 
 interface ProjectCardProps {
     title: string;
-    imageUrl: string;
+    displayImage: string;
     description: string;
     slug: string;
     tags: string[];
 }
 
 /*TODO:
-- Not sure yet: Voorzie carousel van techstack iconen onder de titel
 - Not sure yet: Voorzie een carousel voor meerdere afbeeldingen per project
 */
-export function ProjectCard({ title, imageUrl, description, slug, tags }: ProjectCardProps) {
+export function ProjectCard({ title, displayImage, description, slug, tags }: ProjectCardProps) {
     return (
         <Card className="shadow-md hover:shadow-lg transition-shadow dark:shadow-none dark:hover:shadow-xl">
             <CardHeader className="text-center">
-                <img src={imageUrl} alt={title} className="mx-auto mb-2 rounded-md" />
-
+                <img src={displayImage} alt={title} className="mx-auto mb-2 rounded-md" />
                 <CardTitle className="text-xl">{title}</CardTitle>
 
                 {tags && (
@@ -44,7 +42,7 @@ export function ProjectCard({ title, imageUrl, description, slug, tags }: Projec
                 <p className="p-4 text-muted-foreground">{description}</p>
 
                 <div className="flex justify-center mt-4">
-                    <Button asChild>
+                    <Button asChild variant="outline">
                         <Link to={`/projects/${slug}`}>
                             More info
                         </Link>

@@ -15,9 +15,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
-import { useDarkMode } from '@/context/DarkModeContext';
-
-import { Moon, Sun, Code } from "lucide-react";
+import { Code } from "lucide-react";
 
 // Logo component
 const Logo = () => {
@@ -77,160 +75,140 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
   { href: '/contact', label: 'Contact' },
 ];
 
-export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
-  (
-    {
-      className,
-      logo = <Logo />,
-      logoHref = '#',
-      navigationLinks = defaultNavigationLinks,
-      ...props
-    },
-    ref
-  ) => {
-    const { theme, toggleTheme } = useDarkMode();
+const Navbar01Component = (
+  {
+    className,
+    logo = <Logo />,
+    logoHref = '#',
+    navigationLinks = defaultNavigationLinks,
+    ...props
+  }: Navbar01Props & { ref?: React.Ref<HTMLElement> },
+  ref: React.Ref<HTMLElement>
+) => {
+  /* ---------------------------------------------------
+     EXISTING NAVBAR LOGIC
+  --------------------------------------------------- */
+  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+  const location = useLocation();
 
-    /* ---------------------------------------------------
-       EXISTING NAVBAR LOGIC
-    --------------------------------------------------- */
-    const [isMobile, setIsMobile] = useState(false);
-    const containerRef = useRef<HTMLElement>(null);
-    const location = useLocation();
-
-    useEffect(() => {
-      const checkWidth = () => {
-        if (containerRef.current) {
-          const width = containerRef.current.offsetWidth;
-          setIsMobile(width < 768); // md breakpoint
-        }
-      };
-
-      checkWidth();
-
-      const resizeObserver = new ResizeObserver(checkWidth);
+  useEffect(() => {
+    const checkWidth = () => {
       if (containerRef.current) {
-        resizeObserver.observe(containerRef.current);
+        const width = containerRef.current.offsetWidth;
+        setIsMobile(width < 768); // md breakpoint
       }
+    };
 
-      return () => resizeObserver.disconnect();
-    }, []);
+    checkWidth();
 
-    const combinedRef = React.useCallback((node: HTMLElement | null) => {
-      containerRef.current = node;
-      if (typeof ref === 'function') ref(node);
-      else if (ref) ref.current = node;
-    }, [ref]);
+    const resizeObserver = new ResizeObserver(checkWidth);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  const combinedRef = React.useCallback((node: HTMLElement | null) => {
+    containerRef.current = node;
+    if (typeof ref === 'function') ref(node);
+    else if (ref) ref.current = node;
+  }, [ref]);
 
 
-    /* ---------------------------------------------------
-       RENDER
-    --------------------------------------------------- */
-    return (
-      <header
-        ref={combinedRef}
-        className={cn(
-          'fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline',
-          className
-        )}
-        {...props}
-      >
-        <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
+  /* ---------------------------------------------------
+     RENDER
+  --------------------------------------------------- */
+  return (
+    <header
+      ref={combinedRef}
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline',
+        className
+      )}
+      {...props}
+    >
+      <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
 
-          {/* LEFT: Logo */}
-          <div className="flex items-center gap-2">
-            <Link to={"/"} className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
-              <div className="text-2xl">
-                {logo}
-              </div>
-              <span className="hidden font-bold text-xl sm:inline-block">
-                Wilfred Polderman
-              </span>
-            </Link>
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-4">
-
-            {/* DARK MODE BUTTON */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="h-9 w-9"
-            >
-              {theme === "light" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-
-            {/* DESKTOP NAV */}
-            {!isMobile && (
-              <NavigationMenu className="flex">
-                <NavigationMenuList className="gap-1">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index}>
-                      <Link
-                        to={link.href}
-                        className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none",
-                          location.pathname === link.href
-                            ? "bg-accent text-accent-foreground"
-                            : "text-foreground/80 hover:text-foreground"
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            )}
-
-            {/* MOBILE NAV */}
-            {isMobile && (
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    className="group h-9 w-9 hover:bg-accent hover:text-accent-foreground"
-                    variant="ghost"
-                    size="icon"
-                  >
-                    <HamburgerIcon />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent align="end" className="w-48 p-2">
-                  <NavigationMenu className="max-w-none">
-                    <NavigationMenuList className="flex-col items-start gap-1">
-                      {navigationLinks.map((link, index) => (
-                        <NavigationMenuItem key={index} className="w-full">
-                          <Link
-                            to={link.href}
-                            className={cn(
-                              "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground",
-                              location.pathname === link.href
-                                ? "bg-accent text-accent-foreground"
-                                : "text-foreground/80"
-                            )}
-                          >
-                            {link.label}
-                          </Link>
-                        </NavigationMenuItem>
-                      ))}
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                </PopoverContent>
-              </Popover>
-            )}
-
-          </div>
+        {/* LEFT: Logo */}
+        <div className="flex items-center gap-2">
+          <Link to={"/"} className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
+            <div className="text-2xl">
+              {logo}
+            </div>
+          </Link>
         </div>
-      </header>
-    );
-  }
-);
 
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4">
+
+          {/* DESKTOP NAV */}
+          {!isMobile && (
+            <NavigationMenu className="flex">
+              <NavigationMenuList className="gap-1">
+                {navigationLinks.map((link, index) => (
+                  <NavigationMenuItem key={index}>
+                    <Link
+                      to={link.href}
+                      className={cn(
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none",
+                        location.pathname === link.href
+                          ? "bg-accent text-accent-foreground"
+                          : "text-foreground/80 hover:text-foreground"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          )}
+
+          {/* MOBILE NAV */}
+          {isMobile && (
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  className="group h-9 w-9 hover:bg-accent hover:text-accent-foreground"
+                  variant="ghost"
+                  size="icon"
+                >
+                  <HamburgerIcon />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent align="end" className="w-48 p-2">
+                <NavigationMenu className="max-w-none">
+                  <NavigationMenuList className="flex-col items-start gap-1">
+                    {navigationLinks.map((link, index) => (
+                      <NavigationMenuItem key={index} className="w-full">
+                        <Link
+                          to={link.href}
+                          className={cn(
+                            "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground",
+                            location.pathname === link.href
+                              ? "bg-accent text-accent-foreground"
+                              : "text-foreground/80"
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      </NavigationMenuItem>
+                    ))}
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </PopoverContent>
+            </Popover>
+          )}
+
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export const Navbar01 = React.forwardRef(Navbar01Component);
 Navbar01.displayName = 'Navbar01';
 
 export { Logo, HamburgerIcon };

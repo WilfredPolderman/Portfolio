@@ -8,7 +8,7 @@ export const HeroSection = () => {
     return (
         <section className="
             py-20 px-4 text-center flex flex-col items-center justify-center
-            bg-gradient-to-r 
+            bg-linear-to-r 
             from-emerald-400 to-cyan-400 
             dark:from-emerald-900 dark:to-cyan-900
         ">
@@ -22,7 +22,7 @@ export const HeroSection = () => {
             </h1>
 
             <h2 className="text-2xl text-foreground">
-                Full-Stack Developer
+                Full-Stack developer based in Antwerp, Belgium
             </h2>
 
             <div className="flex flex-wrap justify-center gap-4 mt-5">
