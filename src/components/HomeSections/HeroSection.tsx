@@ -9,8 +9,7 @@ export const HeroSection = () => {
         <section className="
             py-20 px-4 text-center flex flex-col items-center justify-center
             bg-linear-to-r 
-            from-emerald-400 to-cyan-400 
-            dark:from-emerald-900 dark:to-cyan-900
+            from-emerald-900 to-cyan-900
         ">
 
             <div className="mb-5 animate-bounce">

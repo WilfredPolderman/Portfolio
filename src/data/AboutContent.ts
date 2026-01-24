@@ -20,12 +20,19 @@ export const workExperience: WorkExperience[] = [
     title: "Web Developer (Volunteer)",
     company: "Woonderwijs",
     period: "July 2025 - current",
-    description: ""
+    description: "",
+    skillsUsed: ["Wordpress", "Elementor"]
   },
   {
     title: "Talent acquisition specialist",
     company: "TEC",
     period: "October 2022 - November 2023",
+    description: ""
+  },
+  {
+    title: "Technical recruiter/Account manager",
+    company: "Jobs Voor Techniekers",
+    period: "March 2022 - October 2022",
     description: ""
   }
 ];

@@ -15,7 +15,7 @@ interface ProjectCardProps {
 */
 export function ProjectCard({ title, displayImage, description, slug, tags }: ProjectCardProps) {
     return (
-        <Card className="shadow-md hover:shadow-lg transition-shadow dark:shadow-none dark:hover:shadow-xl">
+        <Card className="shadow-none hover:shadow-xl transition-shadow">
             <CardHeader className="text-center">
                 <img src={displayImage} alt={title} className="mx-auto mb-2 rounded-md" />
                 <CardTitle className="text-xl">{title}</CardTitle>
@@ -27,8 +27,7 @@ export function ProjectCard({ title, displayImage, description, slug, tags }: Pr
                                 key={tag}
                                 className="
                                     px-3 py-1 text-sm rounded-full 
-                                    bg-accent text-accent-foreground
-                                    dark:bg-accent/40 dark:text-accent-foreground
+                                    bg-accent/40 text-accent-foreground
                                 "
                             >
                                 {tag}

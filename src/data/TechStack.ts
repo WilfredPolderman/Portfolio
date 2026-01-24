@@ -19,4 +19,14 @@ export const techStack = [
         technologies: ["Git", "Docker", "Visual Studio", "VS Code", "WordPress", "Elementor"],
         color: { bg: "bg-purple-50", darkBg: "dark:bg-purple-900/20", border: "border-purple-600", darkBorder: "dark:border-purple-400", badge: "bg-purple-200", darkBadge: "dark:bg-purple-800" }
     },
+    {
+        category: "Mobile development",
+        technologies: ["React Native", "Expo"],
+        color: { bg: "bg-pink-50", darkBg: "dark:bg-pink-900/20", border: "border-pink-600", darkBorder: "dark:border-pink-400", badge: "bg-pink-200", darkBadge: "dark:bg-pink-800" }
+    },
+    {
+        category: "Cloud services",
+        technologies: ["Firebase"],
+        color: { bg: "bg-yellow-50", darkBg: "dark:bg-yellow-900/20", border: "border-yellow-600", darkBorder: "dark:border-yellow-400", badge: "bg-yellow-200", darkBadge: "dark:bg-yellow-800" }
+    }
 ]   

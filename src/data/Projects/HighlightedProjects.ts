@@ -25,16 +25,12 @@ export const HighlightedProjects: Project[] = [
     },
     {
         id: 3,
-        title: "Unity dino runner",
-        displayImage: "/images/projects/unity-game.png",   
-        description: "A dino runner game made in Unity with C#.",
-        fullDescription: `As a school project, I created a 2D Dino Runner game using Unity and C#.
-                          Feel free to play the game yourself by clicking the "Download" button below!`,
-        link: "/projects/unity-dino-runner",
-        downloadLink: "/downloads/Run-Dino-Run.zip",
-        tags: ["Unity", "C#"],
-        slug: "unity-dino-runner",
-        showDownloadButton: true,
-        githubLink: "https://github.com/it-graduaten-aj2526/aj2526-it-challenges-3-unity-WilfredPolderman/tree/main/EigenSpel"
+        title: "Zuunig",
+        displayImage: "/images/projects/zuunig.png",
+        description: "A mobile Android app to track your expenses and help you save money.",
+        fullDescription: "For a school project, I developed a mobile application for Android called Zuunig. I created this app because most budgeting apps are too complex and require too many steps from the user. I wanted to keep it simple, which is why I built this app.",
+        link: "/projects/zuunig",
+        tags: ["React-native", "TypeScript", "Expo", "Firebase" ],
+        slug: "zuunig"
     }
 ];
