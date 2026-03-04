@@ -1,18 +1,8 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
+import type { ProjectCardProps } from "../../models/ProjectCardProps";
 
-interface ProjectCardProps {
-    title: string;
-    displayImage: string;
-    description: string;
-    slug: string;
-    tags: string[];
-}
-
-/*TODO:
-- Not sure yet: Voorzie een carousel voor meerdere afbeeldingen per project
-*/
 export function ProjectCard({ title, displayImage, description, slug, tags }: ProjectCardProps) {
     return (
         <Card className="shadow-none hover:shadow-xl transition-shadow">

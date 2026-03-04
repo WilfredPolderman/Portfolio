@@ -3,9 +3,10 @@ import type { IconBaseProps } from "react-icons";
 interface SkillBubbleProps {
     name: string;
     Icon: React.ComponentType<IconBaseProps>;
+    color?: string;
 }
 
-export const SkillBubble = ({ name, Icon }: SkillBubbleProps) => {
+export const SkillBubble = ({ name, Icon, color }: SkillBubbleProps) => {
     return (
         <div className="flex flex-col items-center">
 
@@ -18,7 +19,7 @@ export const SkillBubble = ({ name, Icon }: SkillBubbleProps) => {
                     border border-border
                 "
             >
-                <Icon className="text-4xl" />
+                <Icon className="text-4xl" style={color ? { color } : undefined} />
             </div>
 
             <p className="mt-3 font-medium text-foreground">{name}</p>

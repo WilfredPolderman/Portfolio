@@ -20,7 +20,7 @@ export const HighlightedProjects: Project[] = [
         displayImage: "/images/projects/portfolio-site.png",
         description: "It's what you are looking at right now ;)",
         link: "/projects/portfolio-site",
-        tags: ["React", "TypeScript", "TailwindCSS", "shadcn-ui"],
+        tags: ["React", "TypeScript", "TailwindCSS", "shadcn-ui", "Netlify"],
         slug: "portfolio-site"
     },
     {

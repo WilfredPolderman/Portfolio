@@ -16,6 +16,7 @@ export const SkillsSection = () => {
                             key={skill.name}
                             name={skill.name}
                             Icon={skill.icon}
+                            color={skill.color}
                         />
                     ))}
                 </div>

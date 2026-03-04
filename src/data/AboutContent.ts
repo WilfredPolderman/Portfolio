@@ -17,6 +17,13 @@ export const education: Education[] = [
 
 export const workExperience: WorkExperience[] = [
   {
+    title: "Developer (Internship)",
+    company: "Ewings",
+    period: "Februari 2026 - current",
+    description: "",
+    skillsUsed: ["ASP.NET", "Playwright", "DynamicWeb"]
+  },
+  {
     title: "Web Developer (Volunteer)",
     company: "Woonderwijs",
     period: "July 2025 - current",
