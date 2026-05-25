@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 
 export const About: FunctionComponent = () => {
   return (
-    <div className="py-12 px-4 bg-gradient-to-br from-slate-900 to-slate-800">
+    <div className="py-12 px-4">
       <div className="max-w-6xl mx-auto">
 
         {/* Hero Section */}
