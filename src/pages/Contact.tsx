@@ -1,5 +1,4 @@
 import { type FunctionComponent } from "react";
-import { Mail} from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Contact: FunctionComponent = () => {
@@ -10,16 +9,7 @@ export const Contact: FunctionComponent = () => {
           <h1 className="text-4xl font-bold text-white mb-4">Get in touch</h1>
         </section>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <a
-            href="mailto:wilfredpolderman@gmail.com"
-            className="bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-400 hover:bg-blue-900/30 transition-all hover:scale-105"
-          >
-            <Mail className="text-blue-400 mb-3" size={32} />
-            <h3 className="font-semibold text-white mb-2">Email</h3>
-            <p className="text-sm text-muted-foreground">Get in touch</p>
-          </a>
-
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
           <a
             href="https://be.linkedin.com/in/wilfred-polderman-216935234"
             target="_blank"
