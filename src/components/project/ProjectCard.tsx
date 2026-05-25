@@ -5,9 +5,13 @@ import type { ProjectCardProps } from "../../models/ProjectCardProps";
 
 export function ProjectCard({ title, displayImage, description, slug, tags }: ProjectCardProps) {
     return (
-        <Card className="shadow-none hover:shadow-xl transition-shadow">
+        <Card className="shadow-none hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 group">
             <CardHeader className="text-center">
-                <img src={displayImage} alt={title} className="mx-auto mb-2 rounded-md" />
+                <img 
+                    src={displayImage} 
+                    alt={title} 
+                    className="mx-auto mb-2 rounded-md transition-transform duration-300 group-hover:scale-110" 
+                />
                 <CardTitle className="text-xl">{title}</CardTitle>
 
                 {tags && (

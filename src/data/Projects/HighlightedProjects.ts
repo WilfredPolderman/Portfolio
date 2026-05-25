@@ -10,8 +10,8 @@ export const HighlightedProjects: Project[] = [
                             called "Woonderwijs" that was looking for someone to build a new website for them in WordPress. 
                             I saw this as a great learning opportunity to improve my WordPress skills and most importantly, to learn 
                             how to translate a client's needs into a real, functional product.`,
-        link: "https://www.woonzekerheid.be/",
-        tags: ["WordPress", "Elementor", "Web Design"],
+        link: "https://www.woonderwijs.be/",
+        tags: ["WordPress", "Elementor", "Web Design", "UI/UX design", "Analysis"],
         slug: "woonderwijs"
     },
     {

@@ -29,11 +29,11 @@ export const About: FunctionComponent = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {techStack.map((stack) => (
-              <div key={stack.category} className={`${stack.color.darkBg} p-6 rounded-lg border-l-4 ${stack.color.darkBorder}`}>
+              <div key={stack.category} className={`${stack.color.bg} p-6 rounded-lg border-l-4 ${stack.color.border}`}>
                 <h3 className="font-semibold text-white mb-4">{stack.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {stack.technologies.map((tech) => (
-                    <span key={tech} className={`px-3 py-1 text-sm ${stack.color.darkBadge} text-white rounded-full`}>
+                    <span key={tech} className={`px-3 py-1 text-sm ${stack.color.badge} text-white rounded-full`}>
                       {tech}
                     </span>
                   ))}
