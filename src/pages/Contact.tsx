@@ -1,7 +1,6 @@
 import { type FunctionComponent } from "react";
-import { Mail, MapPin } from "lucide-react";
+import { Mail} from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
 
 export const Contact: FunctionComponent = () => {
   return (
@@ -43,90 +42,6 @@ export const Contact: FunctionComponent = () => {
             <p className="text-sm text-muted-foreground">Check out my work</p>
           </a>
         </div>
-
-        <section className="bg-card p-8 rounded-lg border border-border">
-          <div className="flex items-center gap-2 mb-6">
-            <MapPin className="text-emerald-400" size={24} />
-            <p className="text-muted-foreground">Based in Antwerp, Belgium</p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
-          
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            className="space-y-6"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-              <label>
-                Don't fill this out: <input name="bot-field" />
-              </label>
-            </p>
-
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full px-4 py-3 bg-input border border-border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-3 bg-input border border-border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
-                Subject *
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                className="w-full px-4 py-3 bg-input border border-border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all"
-                placeholder="What's this about?"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={6}
-                className="w-full px-4 py-3 bg-input border border-border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all resize-none"
-                placeholder="Tell me about your project or idea..."
-              />
-            </div>
-
-            <Button type="submit" size="lg" className="w-full">
-              Send Message
-            </Button>
-          </form>
-        </section>
       </div>
     </div>
   );
