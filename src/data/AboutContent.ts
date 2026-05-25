@@ -1,4 +1,29 @@
-import type { Education, WorkExperience, Certification } from "@/models/About";
+import type { Education, WorkExperience, Certification, Statistic } from "@/models/About";
+
+export const personalIntro = "What makes my profile unique? I bring both strong communication and interpersonal skills from my background in sales and recruitment, combined with technical development expertise. I can bridge the gap between business needs and technical solutions.";
+
+export const statistics: Statistic[] = [
+  {
+    label: "Years Experience",
+    value: "3+"
+  },
+  {
+    label: "Projects Completed",
+    value: "15+"
+  },
+  {
+    label: "Technologies",
+    value: "20+"
+  }
+];
+
+export const skillsByCategory = {
+  Languages: ["TypeScript", "JavaScript", "C#", "HTML5", "CSS3"],
+  Frontend: ["React", "Tailwind CSS", "Bootstrap"],
+  Backend: ["ASP.NET", ".NET Core", "Node.js"],
+  Databases: ["MySQL", "MongoDB"],
+  Tools: ["Git", "Docker", "VS Code"]
+};
 
 export const education: Education[] = [
   {
@@ -24,7 +49,7 @@ export const workExperience: WorkExperience[] = [
     skillsUsed: ["ASP.NET", "Playwright", "DynamicWeb"]
   },
   {
-    title: "Web Developer (Volunteer)",
+    title: "Lead Web Developer (Volunteer)",
     company: "Woonderwijs",
     period: "July 2025 - current",
     description: "",

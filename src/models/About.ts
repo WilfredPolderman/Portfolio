@@ -17,3 +17,14 @@ export interface Certification {
     period: string;
     downloadLink?: string;
 }
+
+export interface Skill {
+    name: string;
+    proficiency: "Proficient" | "Intermediate" | "Learning";
+}
+
+
+export interface Statistic {
+    label: string;
+    value: string;
+}
